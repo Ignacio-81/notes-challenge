@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "user_notes", schema = "notes", catalog = "")
 public class UserNotes {
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
   @Id
   @Column(name = "iduser_notes")
   private int idUserNotes;
