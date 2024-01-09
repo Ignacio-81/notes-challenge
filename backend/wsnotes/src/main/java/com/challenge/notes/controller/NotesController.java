@@ -25,7 +25,6 @@ public class NotesController {
   @Autowired private INotesService iNotesService;
 
   @PostMapping()
-  @CrossOrigin(value = "http://localhost:3000")
   public ResponseDTO findAll(@RequestBody NoteRequestDTO request) {
     try {
       NoteDTO result = iNotesService.findByUserId(request.getIdUser(), request.getCategory());
@@ -36,7 +35,6 @@ public class NotesController {
   }
 
   @PostMapping("/create")
-  @CrossOrigin(value = "http://localhost:3000")
   public ResponseDTO createNoteByUser(@RequestBody NoteRequestDTO request) {
     try {
       return ResponseDTO.general(
@@ -48,7 +46,6 @@ public class NotesController {
   }
 
   @PutMapping("/update")
-  @CrossOrigin(value = "http://localhost:3000")
   public ResponseDTO updateNote(@RequestBody NoteRequestDTO request) {
     try {
       return ResponseDTO.general(
@@ -62,7 +59,6 @@ public class NotesController {
   }
 
   @DeleteMapping()
-  @CrossOrigin(value = "http://localhost:3000")
   public ResponseDTO deleteNote(@RequestBody NoteRequestDTO request) {
     try {
       iNotesService.deleteNote(request.getIdNote());
