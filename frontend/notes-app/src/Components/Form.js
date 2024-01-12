@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 //ContextApi
 import useNotes from '../hooks/useNotes.js'
-//Material
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import makeStyles from '@mui/styles/makeStyles';
+import Grid from '@mui/material/Grid';
 //Components
 import MainBar from './MainBar.js';
 import NotesList from './NotesList.js';
@@ -31,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     },
     noteWindow: {
         width: '100%',
-        margin: `${theme.spacing(1)}px auto`,
+        margin: `${theme.spacing(1)} auto`,
         padding: theme.spacing(2),
     },
     list: {

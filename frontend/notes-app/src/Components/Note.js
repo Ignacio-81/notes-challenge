@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react'
-//Material
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import DeleteIcon from '@material-ui/icons/Delete';
-import SaveIcon from '@material-ui/icons/Save';
-import TextField from '@material-ui/core/TextField';
-import ArchiveIcon from '@material-ui/icons/Archive';
-import UnarchiveIcon from '@material-ui/icons/Unarchive';
+import makeStyles from '@mui/styles/makeStyles';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import SaveIcon from '@mui/icons-material/Save';
+import TextField from '@mui/material/TextField';
+import ArchiveIcon from '@mui/icons-material/Archive';
+import UnarchiveIcon from '@mui/icons-material/Unarchive';
 
 //ContextApi
 import useNotes from '../hooks/useNotes.js'
@@ -27,12 +26,12 @@ const useStyles = makeStyles((theme) => ({
     },
     noteWindow: {
         width: '100%',
-        margin: `${theme.spacing(1)}px auto`,
+        margin: `${theme.spacing(1)} auto`,
         padding: theme.spacing(2),
     },
     categoryText: {
        /*  width: '100%', */
-        margin: `${theme.spacing(1)}px auto`,
+        margin: `${theme.spacing(1)} auto`,
         padding: theme.spacing(2),
     }
 }))
