@@ -1,6 +1,7 @@
 //Meterial UI
-import { createTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
+import { createTheme, adaptV4Theme } from '@mui/material/styles';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material';
+
 //Fonts
 import '@fontsource/roboto';
 
@@ -12,7 +13,7 @@ import { NotesProvider } from "./context/notesProvider.js"
 
 
 //Creamos en Tema para la aplicacion customizando MUI
-const theme = createTheme({
+const theme = createTheme(adaptV4Theme({
     typography: {
         "textAlign": 'left',
     },
@@ -39,13 +40,15 @@ const theme = createTheme({
         }
     }
 
-})
+}))
 function App() {
     return (
         <NotesProvider>
-            <ThemeProvider theme={theme}>
-                <Form />
-            </ThemeProvider>
+            <StyledEngineProvider injectFirst>
+                <ThemeProvider theme={theme}>
+                    <Form />
+                </ThemeProvider>
+            </StyledEngineProvider>
         </NotesProvider>
     );
 }
