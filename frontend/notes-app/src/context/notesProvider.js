@@ -20,6 +20,7 @@ const NotesProvider = ({ children }) => {
     const getNotes = async request => {
         setLoading(true)
         setComError(false)
+        console.log('get', request)
         fetch(URL_NOTES, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -30,6 +31,7 @@ const NotesProvider = ({ children }) => {
                 if (response.status === 200) {
                     response.json()
                         .then(data => {
+                            console.log('response', data.body)
                             setResponse(data.body)
                             setLoading(false)
                         })
