@@ -12,12 +12,16 @@ public class NotesApplication {
   public static void main(String[] args) {
     SpringApplication.run(NotesApplication.class, args);
   }
+
+  //ONLY FOR RAILWAY DEPLOY!!!!!
   @Bean
   public WebMvcConfigurer corsConfigurer() {
     return new WebMvcConfigurer() {
       @Override
       public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/notes").allowedOrigins("https://notes-challenge-production-841f.up.railway.app");
+        registry.addMapping("/notes/create").allowedOrigins("https://notes-challenge-production-841f.up.railway.app");
+        registry.addMapping("/notes/update").allowedOrigins("https://notes-challenge-production-841f.up.railway.app");
       }
     };
   }
