@@ -19,9 +19,6 @@ public class NotesApplication {
     return new WebMvcConfigurer() {
       @Override
       public void addCorsMappings(CorsRegistry registry) {
-/*        registry.addMapping("/notes").allowedOrigins("https://notes-challenge-production-841f.up.railway.app");
-        registry.addMapping("/notes/create").allowedOrigins("https://notes-challenge-production-841f.up.railway.app");
-        registry.addMapping("/notes/update").allowedOrigins("https://notes-challenge-production-841f.up.railway.app");*/
         registry.addMapping("/notes/**").allowedOrigins("*").allowedMethods("GET", "POST","PUT", "DELETE");
       }
     };
